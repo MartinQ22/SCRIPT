@@ -1,0 +1,115 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- estilos -->
+    <link rel="stylesheet" href="../styles.css" />
+    <!-- fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"/>
+      <!-- META SEO -->
+       <meta name="description" content="Tienda online de Zapatillas, podras comprar y order tus zapatillas preferidas">
+       <meta name="keywords" content="Zapatillas, SCRIPTSTORE, Nike, nike, Puma, Puma, Zapatillas Argentina">
+    <title>SCRIPTSTORE</title>
+  </head>
+  <body class="background bodyCarritoPage">
+    <!-- header -->
+    <header>
+      <!-- Menu de hamburguesa -->
+      <button class="hamburger-menu" aria-label="Toggle navigation menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <!-- logo -->
+      <a href="../index.html" class="logo">SCRIPTSTORE</a>
+      <!-- menu de navegacion -->
+      <nav class="main-nav"> 
+        <a href="../index.html">Tienda</a>
+        <a href="colection.html">Colección</a>
+        <a href="nosotros.html">Nosotros</a>
+      </nav>
+
+      <!-- carrito -->
+      <div class="containerIconPadre">
+        <!-- icono carrito -->
+        <div class="containerIconCarrito buttonCarrito">
+          <img
+            class="iconoCarrito"
+            src="../images/shopping_cart.png"
+            alt="Carrito de Compra"
+          />
+          <!-- contador de items del carrito -->
+          <div class="count-products">
+            <span id="contador-productos">0</span>
+          </div>
+        </div>
+        <!-- lista de items (escodida por defecto)-->
+        <div class="container-cart-products hidden-cart">
+          <div class="row-product hidden">
+            <div class="cart-product">
+              <div class="info-cart-product">
+                <span class="cantidad-producto-carrito">1</span>
+                <p class="titulo-producto-carrito">Producto</p>
+                <span class="precio-producto-carrito">$999</span>
+              </div>
+              <!-- icono de cerrar -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="icon-close"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <div class="cart-total hidden">
+            <h3>Total:</h3>
+            <span class="total-pagar">$1000</span>
+          </div>
+          <p class="cart-empty">Carrito vacío</p>
+        </div>
+      </div>
+    </header>
+    <!-- Main -->
+    <main>
+        <!-- div que aparecera cuando el carrito este vacio -->
+        <div class="carritoVacio">
+            <div class="imgContainer">
+                <img class="carritoImg" src="https://res.cloudinary.com/dfwb8a17z/image/upload/v1748153571/cart-arrow-down-svgrepo-com_gan3qx.svg" alt="carrito vacio">
+            </div>
+            <h1>Tu carrito está vacío</h1>
+            <p>Añade productos a tu carrito para continuar</p>
+        </div>
+
+        <!-- div que aparecera cuando el carrito tenga productos -->
+         <div class="contenedorCarritoConProductos">
+            <!-- titulo -->
+        <div class="tituloCarrito hidden">
+            <h2>TU CARRITO</h2>
+            <span class="cantidad-producto-carrito"></span>
+        </div>
+            <div class="carritoConProductos hidden"></div>
+        </div>
+        
+    </main>
+    <!-- Footer -->
+     <!-- class="footerCarritoPage" -->
+    <footer >
+      <p>Todos los derechos reservados</p>
+    </footer>
+    <!-- js -->
+    <script src="../main.js"></script>
+  </body>
+</html>

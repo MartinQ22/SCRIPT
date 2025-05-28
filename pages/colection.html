@@ -1,0 +1,133 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Discover our exclusive collection of premium sneakers. Shop the latest styles from Nike, Puma, and more at SCRIPTSTORE."
+    />
+    <meta
+      name="keywords"
+      content="Zapatillas, SCRIPTSTORE, Nike, Puma, Sneakers, Shoes, Collection, Premium Footwear"
+    />
+    <meta name="author" content="SCRIPTSTORE" />
+    <!-- Open Graph Meta Tags -->
+    <meta
+      property="og:title"
+      content="SCRIPTSTORE - Premium Sneaker Collection"
+    />
+    <meta
+      property="og:description"
+      content="Discover our exclusive collection of premium sneakers."
+    />
+    <meta property="og:type" content="website" />
+    <!-- Performance Optimization -->
+    <link rel="preload" href="../styles.css" as="style" />
+    <link rel="preload" href="../main.js" as="script" />
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Styles -->
+    <link rel="stylesheet" href="../styles.css" />
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;600;800&family=Inter:wght@400;500;600&family=Jost:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Colección | SCRIPTSTORE</title>
+  </head>
+  <body class="background">
+    <!-- header -->
+    <header>
+      <button class="hamburger-menu" aria-label="Toggle navigation menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <a href="../index.html" class="logo">SCRIPTSTORE</a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="../index.html" aria-current="page">Tienda</a>
+        <a href="colection.html">Colección</a>
+        <a href="nosotros.html">Nosotros</a>
+      </nav>
+      <div class="containerIconPadre">
+        <button
+          class="containerIconCarrito buttonCarrito"
+          aria-label="Shopping cart"
+        >
+          <img
+            class="iconoCarrito"
+            src="../images/shopping_cart.png"
+            alt="Shopping Cart Icon"
+            width="28"
+            height="28"
+            loading="lazy"
+          />
+          <div class="count-products" aria-live="polite">
+            <span id="contador-productos" aria-label="Items in cart">0</span>
+          </div>
+        </button>
+        <div class="container-cart-products hidden-cart" aria-hidden="true">
+          <div class="row-product hidden">
+            <div class="cart-product">
+              <div class="info-cart-product">
+                <span class="cantidad-producto-carrito">1</span>
+                <p class="titulo-producto-carrito">Producto</p>
+                <span class="precio-producto-carrito">$999</span>
+              </div>
+              <button class="remove-product" aria-label="Remove item">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="icon-close"
+                  width="25"
+                  height="25"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="cart-total hidden">
+            <h3>Total:</h3>
+            <span class="total-pagar">$1000</span>
+          </div>
+          <p class="cart-empty">Carrito vacío</p>
+          <button class="botonIrAlCarrito" id="botonIrAlCarritoPages">
+            Ir Al Carrito
+          </button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="bannerColection" aria-label="Collection banner">
+        <div class="bannerContent">
+          <h1 class="bannerTitle colection">CLASSICS</h1>
+          <p class="bannerDescription colection">
+            Estilos Clasicos Infantables
+          </p>
+        </div>
+      </section>
+      <section class="productos-section">
+        <div class="tituloLista"><h3>Destacados</h3></div>
+        <div
+          class="gridDeCards contenedorDeItems"
+          id="containerListaZapatillasColeccion"
+        ></div>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2025 SCRIPTSTORE. Todos los derechos reservados</p>
+    </footer>
+    <script src="../main.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,143 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- estilos -->
+    <link rel="stylesheet" href="../styles.css" />
+    <!-- fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"/>
+      <!-- META SEO -->
+       <meta name="description" content="Tienda online de Zapatillas, podras comprar y order tus zapatillas preferidas">
+       <meta name="keywords" content="Zapatillas, SCRIPTSTORE, Nike, nike, Puma, Puma, Zapatillas Argentina">
+    <title>Nosotros | SCRIPTSTORE</title>
+  </head>
+  <body class="background">
+    <!-- header -->
+    <header>
+      <!-- Menu de hamburguesa -->
+      <button class="hamburger-menu" aria-label="Toggle navigation menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <!-- logo -->
+      <a href="../index.html" class="logo">SCRIPTSTORE</a>
+      <!-- menu de navegacion -->
+      <nav class="main-nav"> 
+        <a href="../index.html">Tienda</a>
+        <a href="colection.html">Colección</a>
+        <a href="nosotros.html">Nosotros</a>
+      </nav>
+      <!-- carrito -->
+      <div class="containerIconPadre">
+        <!-- icono carrito -->
+        <div class="containerIconCarrito buttonCarrito">
+          <img
+            class="iconoCarrito"
+            src="../images/shopping_cart.png"
+            alt="Carrito de Compra"
+          />
+          <!-- contador de items del carrito -->
+          <div class="count-products">
+            <span id="contador-productos">0</span>
+          </div>
+        </div>
+        <!-- lista de items (hidden por defecto)-->
+        <div class="container-cart-products hidden-cart">
+          <div class="row-product hidden">
+            <div class="cart-product">
+              <div class="info-cart-product">
+                <span class="cantidad-producto-carrito">1</span>
+                <p class="titulo-producto-carrito">Producto</p>
+                <span class="precio-producto-carrito">$999</span>
+              </div>
+              <!-- icono de cerrar -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="icon-close"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <div class="cart-total hidden">
+            <h3>Total:</h3>
+            <span class="total-pagar">$1000</span>
+          </div>
+          <p class="cart-empty">Carrito vacío</p>
+          <!-- button para ir a la page decarrito -->
+         <button class="botonIrAlCarrito" id="botonIrAlCarritoPages"><p>Ir Al Carrito</p></button>
+        </div>
+      </div> 
+    </header>
+    <!-- Main -->
+    <main>
+        <section class="hero-section">
+            <h1 class="hero-title">Rapido. Comodo. Confiable.</h1>
+            <p class="hero-description">Somos una empresa que se encarga de vender zapatillas de alta calidad a un precio accesible para todos los amantes del calzado.</p>
+        </section>
+
+        <section class="features-section">
+            <div class="feature-card">
+                <h3 class="feature-title">Extiende Tus Horizontes</h3>
+                <p class="feature-description">Encuentra las zapatillas de las marcas mas importantes del mundo, y encuentra la que mejor se adapte a tus necesidades.</p>
+            </div>
+            <div class="feature-card">
+                <h3 class="feature-title">Con Solo un Click </h3>
+                <p class="feature-description">Consigue tus zapatillas solo con un click, y recibe tu compra en la comodidad de tu hogar.</p>
+            </div>
+            <div class="feature-card">
+                <h3 class="feature-title">Seguro y Confiable</h3>
+                <p class="feature-description">Nuestra tienda online es segura y confiable, y te garantizamos que tu compra sera entregada en perfecto estado.</p>
+            </div>
+        </section>
+
+        <section class="how-it-works-section">
+            <div class="how-it-works-content">
+                <h2 class="how-it-works-subtitle">COMO COMPRAR</h2>
+                <h2 class="how-it-works-title">Realiza tu compra</h2>
+                <p class="how-it-works-description">En nuestra tienda online, podrás encontrar una variedad de zapatillas de alta calidad, para comprar solo debes dar click en el boton de "Agregar al carrito" y listo!</p>
+            </div>
+            <div class="how-it-works-image">
+                <img src="https://res.cloudinary.com/dfwb8a17z/image/upload/v1748383562/sergey-zolkin-_UeY8aTI6d0-unsplash_nfqkuv.jpg" alt="Persona comprando en la web"> </div>
+        </section>
+
+        <section class="location-section">
+            <div class="location-details">
+            <h2 class="location-title">VEN A NUESTROS LOCALES!</h2>
+                <ul class="location-list">
+                    <li>📍​ Chacabuco 186, Córdoba (Local Principal)</li>
+                    <li>📍​ Av. Fuerza Aerea Argentina 1700, Córdoba</li>
+                    <li>📍​ Av. Patricio Peralta Ramos 2865, Mar del Plata, Buenos Aires</li>
+                </ul>
+            </div>
+            <div class="google-maps-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3405.06806558488!2d-64.19522132470707!3d-31.413725597920364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a22285a8a65d%3A0x6b4a39b33a0b4d4b!2sBv.%20Chacabuco%20186%2C%20X5000ICD%20C%C3%B3rdoba!5e0!3m2!1ses-419!2sar!4v1716805127083!5m2!1ses-419!2sar"
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 SCRIPTSTORE. Todos los derechos reservados</p>
+    </footer>
+    <!-- js -->
+    <script src="../main.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY&callback=initMap"></script>
+  </body>
+</html>

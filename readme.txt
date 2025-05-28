@@ -1,0 +1,1 @@
+Bienvenido a Scriptstore, este es un sitio de venta de zapatillas! espero consigas el producto que buscas!  -Martin Quiroga (version optimizada)

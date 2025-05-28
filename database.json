@@ -1,0 +1,82 @@
+[
+    {
+        "title": "PUMA HOOPS x TORTUGAS NINJA MB.04 L&M",
+        "image": "../images/zapatilla_TortugaNaranja.png",
+        "category": "Zapatillas de Moda para Hombre",
+        "price": 259999,
+        "coleccion": "tortugas ninja",
+        "button": "Agregar al Carrito"
+    },
+    {
+        "title": "PUMA x TORTUGAS NINJA Suede XL 2",
+        "image": "../images/zapatilla_RosaSuedo.png",
+        "category": "Zapatillas de Moda para Mujer",
+        "price": 209999,
+        "coleccion": "tortugas ninja",
+        "button": "Agregar al Carrito"
+    },
+    {
+        "title": "PUMA x TORTUGAS NINJA Suede XL",
+        "image": "../images/zapatilla_VerdeSuedo.png",
+        "category": "Zapatillas de Moda para Hombre",
+        "price": 209999,
+        "coleccion": "tortugas ninja",
+        "button": "Agregar al Carrito"
+    },
+    {
+        "title": "PUMA HOOPS X TORTUGAS NINJA MB.03 LO KRANG",
+        "image": "../images/zapatilla_Rosa.png",
+        "category": "Zapatillas de Moda para Hombre",
+        "price": 259999,
+        "coleccion": "tortugas ninja",
+        "button": "Agregar al Carrito"
+    },
+    {
+        "title": "Nike Dunk Low Retro",
+        "image": "../images/zapatilla_NikeDunk.png",
+        "category": "Zapatillas de Moda para Hombre",
+        "price": 199999,
+        "coleccion": "classic",
+        "button": "Agregar al Carrito"
+    },
+    {
+        "title": "Nike Air Force 1 '07",
+        "image": "../images/zapatilla_NikeAirBlanca.png",
+        "category": "Zapatillas de Moda para Hombre",
+        "price": 199999,
+        "coleccion": "classic",
+        "button": "Agregar al Carrito"
+    },
+    {
+        "title": "Air Jordan 1 Low",
+        "image": "../images/zapatilla_NikeJordan.png",
+        "category": "Zapatillas de Moda para Hombre",
+        "coleccion": "classic",
+        "price": 199999,
+        "button": "Agregar al Carrito"
+    },
+    {
+        "title": "Air Jordan 4 Retro",
+        "image": "../images/zapatilla_NikeRetroJordan4.png",
+        "category": "Zapatillas de Moda para Hombre",
+        "coleccion": "classic",
+        "price": 399999,
+        "button": "Agregar al Carrito"
+    },
+    {
+        "title": "Nike Air Max Pulse",
+        "image": "../images/zapatilla_NikeDeportivaGris.png",
+        "category": "Zapatillas de Moda para Hombre",
+        "coleccion": "deportiva",
+        "price": 299999,
+        "button": "Agregar al Carrito"
+    },
+    {
+        "title": "NIKE SB ZOOM NYJAH 3 PREMIUM",
+        "image": "../images/zapatilla_Blanca.png",
+        "category": "Zapatillas de Moda para Hombre",
+        "coleccion": "deportiva",
+        "price": 219999,
+        "button": "Agregar al Carrito"
+    }
+]
