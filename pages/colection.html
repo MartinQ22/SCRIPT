@@ -41,17 +41,21 @@
   <body class="background">
     <!-- header -->
     <header>
+      <!-- Menu Hamburguesa -->
       <button class="hamburger-menu" aria-label="Toggle navigation menu">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
       </button>
+      <!-- Logo -->
       <a href="../index.html" class="logo">SCRIPTSTORE</a>
+      <!-- Navegacion Principal -->
       <nav class="main-nav" aria-label="Main navigation">
         <a href="../index.html" aria-current="page">Tienda</a>
         <a href="colection.html">Colección</a>
         <a href="nosotros.html">Nosotros</a>
       </nav>
+      <!-- Icono Carrito -->
       <div class="containerIconPadre">
         <button
           class="containerIconCarrito buttonCarrito"
@@ -65,19 +69,28 @@
             height="28"
             loading="lazy"
           />
+          <!-- Contador de productos -->
           <div class="count-products" aria-live="polite">
             <span id="contador-productos" aria-label="Items in cart">0</span>
           </div>
         </button>
+        <!-- Contenedor de productos en el carrito -->
         <div class="container-cart-products hidden-cart" aria-hidden="true">
+          <!-- Producto en el carrito -->
           <div class="row-product hidden">
             <div class="cart-product">
+              <!-- Informacion del producto -->
               <div class="info-cart-product">
+                <!-- Cantidad de productos -->
                 <span class="cantidad-producto-carrito">1</span>
+                <!-- Titulo del producto -->
                 <p class="titulo-producto-carrito">Producto</p>
+                <!-- Precio del producto -->
                 <span class="precio-producto-carrito">$999</span>
               </div>
+              <!-- Boton para eliminar el producto -->
               <button class="remove-product" aria-label="Remove item">
+                <!-- Icono de cerrar -->
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -97,11 +110,13 @@
               </button>
             </div>
           </div>
+          <!-- Total del carrito -->
           <div class="cart-total hidden">
             <h3>Total:</h3>
             <span class="total-pagar">$1000</span>
           </div>
           <p class="cart-empty">Carrito vacío</p>
+          <!-- Boton para ir al carrito -->
           <button class="botonIrAlCarrito" id="botonIrAlCarritoPages">
             Ir Al Carrito
           </button>
@@ -109,6 +124,7 @@
       </div>
     </header>
     <main>
+      <!-- Banner de la coleccion -->
       <section class="bannerColection" aria-label="Collection banner">
         <div class="bannerContent">
           <h1 class="bannerTitle colection">CLASSICS</h1>
@@ -117,6 +133,7 @@
           </p>
         </div>
       </section>
+      <!-- Lista de productos -->
       <section class="productos-section">
         <div class="tituloLista"><h3>Destacados</h3></div>
         <div

@@ -15,7 +15,7 @@
        <meta name="keywords" content="Zapatillas, SCRIPTSTORE, Nike, nike, Puma, Puma, Zapatillas Argentina">
     <title>SCRIPTSTORE</title>
   </head>
-  <body class="background bodyCarritoPage">
+  <body>
     <!-- header -->
     <header>
       <!-- Menu de hamburguesa -->
@@ -73,7 +73,7 @@
               </svg>
             </div>
           </div>
-
+          <!-- Total del carrito -->
           <div class="cart-total hidden">
             <h3>Total:</h3>
             <span class="total-pagar">$1000</span>
@@ -84,28 +84,19 @@
     </header>
     <!-- Main -->
     <main>
-        <!-- div que aparecera cuando el carrito este vacio -->
-        <div class="carritoVacio">
-            <div class="imgContainer">
-                <img class="carritoImg" src="https://res.cloudinary.com/dfwb8a17z/image/upload/v1748153571/cart-arrow-down-svgrepo-com_gan3qx.svg" alt="carrito vacio">
-            </div>
-            <h1>Tu carrito está vacío</h1>
-            <p>Añade productos a tu carrito para continuar</p>
-        </div>
+      <!-- Loader -->
+      <div class="container-loader">
+        <div class="loader"></div>
+      </div>
+      <!-- Payment complete (Pago Finalizado)-->
+      <div class="payment-complete hidden"> <img class="imgPaymentComplete" src="../images/check-svgrepo-com (1).svg" alt="Pago realizado con exito ">
+          <h1>Pago realizado con exito</h1>
+        <p>Gracias por tu compra! Te enviamos un correo con los detalles de tu compra.</p>
+        <button class="button-home">Regresar a la tienda</button>
+      </div>
 
-        <!-- div que aparecera cuando el carrito tenga productos -->
-         <div class="contenedorCarritoConProductos">
-            <!-- titulo -->
-        <div class="tituloCarrito hidden">
-            <h2>TU CARRITO</h2>
-            <span class="cantidad-producto-carrito"></span>
-        </div>
-            <div class="carritoConProductos hidden"></div>
-        </div>
-        
+
     </main>
-    <!-- Footer -->
-     <!-- class="footerCarritoPage" -->
     <footer >
       <p>&copy; 2025 SCRIPTSTORE. Todos los derechos reservados</p>
     </footer>

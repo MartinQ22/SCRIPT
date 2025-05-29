@@ -365,10 +365,6 @@ main {
   margin-top: 40px;
 }
 
-.hidden {
-  display: none;
-}
-
 .flex {
   display: flex;
 }
@@ -554,6 +550,36 @@ main {
 
 .hidden {
   display: none;
+}
+
+/* Loader */
+.container-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15%;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.loader {
+  --c:no-repeat linear-gradient(orange 0 0);
+  background: 
+    var(--c),var(--c),var(--c),
+    var(--c),var(--c),var(--c),
+    var(--c),var(--c),var(--c);
+  background-size: 16px 16px;
+  animation: 
+    l32-1 1s infinite,
+    l32-2 1s infinite;
+}
+@keyframes l32-1 {
+  0%,100% {width:45px;height: 45px}
+  35%,65% {width:65px;height: 65px}
+}
+@keyframes l32-2 {
+  0%,40%  {background-position: 0 0,0 50%, 0 100%,50% 100%,100% 100%,100% 50%,100% 0,50% 0,  50% 50% }
+  60%,100%{background-position: 0 50%, 0 100%,50% 100%,100% 100%,100% 50%,100% 0,50% 0,0 0,  50% 50% }
 }
 
 /* Banner */
@@ -816,7 +842,7 @@ main {
   font-weight: 400;
 }
 
-.boton-finalizar-compra {
+.boton-finalizar-compra, .button-home {
   background-color: #0033ff;
   color: #fff;
   width: 280px;
@@ -826,14 +852,14 @@ main {
   cursor: pointer;
 }
 
-.boton-finalizar-compra:hover {
+.boton-finalizar-compra:hover, .button-home:hover {
   background-color: #1d3183;
   color: #fff;
   border: none;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
-.boton-finalizar-compra:active {
+.boton-finalizar-compra:active, .button-home:active {
   background-color: #000;
   color: #1d3183;
   border: none;
@@ -953,6 +979,34 @@ main {
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+}
+
+/* PAGINA FINALIZAR COMPRA */
+
+.payment-complete {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.payment-complete h1 {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 12px;
+  margin-bottom: 10px;
+}
+
+.payment-complete p {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  margin-bottom: 24px;
+}
+
+.imgPaymentComplete {
+  width: 15%;
+  height: 15%;
 }
 
 /* Sección LOCALIZACIONES */
@@ -1120,6 +1174,32 @@ main {
     order: 1;
   }
 
+  /* CARRITO */
+
+  .container-cart-products {
+    min-width: 50%;
+    max-width: fit-content;
+  }
+
+  .cart-empty {
+    min-width: 300px;
+    max-width: fit-content;
+  }
+
+  .row-product {
+    min-width: fit-content;
+  }
+
+  .titulo-producto-carrito {
+    font-size: 14px;
+    min-width: fit-content;
+  }
+  .remove-product {
+
+  .cart-product {
+    width: 250px;
+  }
+
   /* banner */
 
   .bannerContainer {
@@ -1151,6 +1231,8 @@ main {
   .bannerDescription {
     font-size: 14px;
   }
+
+  /* NOSOTROS */
   .hero-title {
     font-size: 29px;
   }
@@ -1166,4 +1248,5 @@ main {
   .location-title {
     font-size: 29px;
   }
+}
 }

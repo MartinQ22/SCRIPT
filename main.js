@@ -1,8 +1,7 @@
-// Constants
 const STORAGE_KEY = "carrito";
 const CURRENCY_LOCALE = "es-AR";
 
-// DOM Elements
+// DOM
 const DOM = {
   cart: {
     button: document.querySelector(".containerIconCarrito"),
@@ -33,11 +32,10 @@ const DOM = {
   },
 };
 
-// State
 let productos = [];
 let allProducts = [];
 
-// Utility Functions
+// Utility Functions (Optimazer)
 const formatPrice = (price) => price.toLocaleString(CURRENCY_LOCALE);
 const formatPriceWithSymbol = (price) => `$${formatPrice(price)}`;
 
@@ -45,7 +43,7 @@ const saveToLocalStorage = () => {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(allProducts));
   } catch (error) {
-    console.error("Error saving to localStorage:", error);
+    console.error("Error al guardar el carrito:", error);
   }
 };
 
@@ -54,20 +52,18 @@ const loadFromLocalStorage = () => {
     const saved = localStorage.getItem(STORAGE_KEY);
     return saved ? JSON.parse(saved) : [];
   } catch (error) {
-    console.error("Error loading from localStorage:", error);
+    console.error("Error al cargar el carrito:", error);
     return [];
   }
 };
 
-// Product Functions
+// FETCH
 async function fetchProducts() {
   try {
     const response = await fetch("../database.json");
-    if (!response.ok) throw new Error("Failed to fetch products");
-
+    if (!response.ok) throw new Error("Error al cargar los productos");
     productos = await response.json();
 
-    // Initialize products display
     if (DOM.products.container) {
       displayInitialProducts();
     }
@@ -75,17 +71,21 @@ async function fetchProducts() {
       displayCollectionProducts();
     }
 
-    // Load cart from storage
+    // Cargar carrito
     allProducts = loadFromLocalStorage();
     updateCartDisplay();
   } catch (error) {
-    console.error("Error fetching products:", error);
+    console.error("Error al cargar los productos:", error);
     showErrorMessage(
-      "Lo sentimos, no pudimos cargar los productos. Por favor, intente más tarde."
+      alert(
+        "Lo sentimos, no se pudieron cargar los productos. Por favor, intente más tarde(Mantenimiento)"
+      )
     );
+    // Mantenimiento en el mensaje de error para evitar preocupaciones al cliente :p
   }
 }
 
+// FUNCION: MOSTRAR PRODUCTOS EN LA !PAGINA PRINCIPAL!
 function displayInitialProducts() {
   if (!DOM.products.container) return;
 
@@ -95,6 +95,7 @@ function displayInitialProducts() {
   DOM.products.container.innerHTML = productsHTML;
 }
 
+// FUNCION FILTER: MOSTRAR PRODUCTOS EN LA PAGINA DE !COLECCIONES! (muestra productos con la coleccion "classic")
 function displayCollectionProducts() {
   if (!DOM.products.collectionContainer) return;
 
@@ -109,6 +110,7 @@ function displayCollectionProducts() {
   DOM.products.collectionContainer.innerHTML = productsHTML;
 }
 
+// FUNCION: CREAR CARD DE PRODUCTOS EN EL INNER HTML
 function createProductCard(product, index) {
   return `
     <div class="cardProducto">
@@ -128,27 +130,29 @@ function createProductCard(product, index) {
   `;
 }
 
-// Cart Functions
+// FUNCION DEL DISPLAY DEL CARRITO
 function updateCartDisplay() {
   const hasProducts = allProducts.length > 0;
 
-  // Update visibility
+  // hiddens
   DOM.cart.empty.classList.toggle("hidden", hasProducts);
   DOM.cart.row.classList.toggle("hidden", !hasProducts);
   DOM.cart.totalContainer.classList.toggle("hidden", !hasProducts);
 
-  // Update cart content
+  // actualziar el contenido del carrito
   updateCartProducts();
   updateCartTotal();
   updateCartPage();
 }
 
+// FUNCION: ACTUALIZAR EL CONTENIDO DEL CARRITO
 function updateCartProducts() {
   DOM.cart.row.innerHTML = allProducts
     .map((product) => createCartProductHTML(product))
     .join("");
 }
 
+// FUNCION: CREAR PRODUCTOS EN EL CARRITO
 function createCartProductHTML(product) {
   return `
     <div class="cart-product">
@@ -174,12 +178,14 @@ function createCartProductHTML(product) {
   `;
 }
 
+// FUNCION: ACTUALIZAR EL TOTAL DEL CARRITO
 function updateCartTotal() {
   const { total, quantity } = calculateCartTotals();
   DOM.cart.total.innerText = formatPriceWithSymbol(total);
   DOM.cart.count.innerText = quantity;
 }
 
+// FUNCION: OPERACION CALCULAR EL TOTAL DEL CARRITO
 function calculateCartTotals() {
   return allProducts.reduce(
     (acc, product) => {
@@ -195,6 +201,7 @@ function calculateCartTotals() {
   );
 }
 
+// FUNCION: ACTUALIZAR EL CONTENIDO DEL CARRITO EN LA PAGINA DE !CARRITO!
 function updateCartPage() {
   if (!DOM.cartPage.productsContainer) return;
 
@@ -219,11 +226,19 @@ function updateCartPageContent() {
       <h3>Total a Pagar:</h3>
       <span id="total-pagar-page">${formatPriceWithSymbol(total)}</span>
     </div>
-    <button class="boton-finalizar-compra">Finalizar Compra</button>
+    <button class="boton-finalizar-compra" id="botonFinalizarCompra">Finalizar Compra</button>
   `;
+
+  // Boton Finalizar Compra (redirige a la pagina de finalizar compra)
+  const finishBtn = document.querySelector("#botonFinalizarCompra");
+  if (finishBtn) {
+    finishBtn.addEventListener("click", () => {
+      window.location.href = "../pages/finalizar-payment.html";
+    });
+  }
 }
 
-// Event Handlers
+// Event Handlers (sirven para esperar a que el usuario haga click en un boton)
 function handleAddToCart(e) {
   if (!e.target.classList.contains("botonCardAgregarCart")) return;
 
@@ -253,6 +268,7 @@ function handleAddToCart(e) {
   saveToLocalStorage();
 }
 
+// FUNCION: ELIMINAR PRODUCTOS DEL CARRITO
 function handleRemoveFromCart(e) {
   const removeButton = e.target.closest(".remove-product");
   if (!removeButton) return;
@@ -278,7 +294,7 @@ function handleCheckout() {
   window.location.href = "../index.html";
 }
 
-// Mobile Navigation
+// MENU DE HAMBURGUESA (BOTON MOBILE)
 function setupMobileNav() {
   if (!DOM.nav.hamburger || !DOM.nav.mainNav) return;
 
@@ -312,7 +328,7 @@ function init() {
   // Fetch products
   fetchProducts();
 
-  // Setup event listeners
+  // EVENTS LISTENERS
   DOM.cart.button?.addEventListener("click", () =>
     DOM.cart.container?.classList.toggle("hidden-cart")
   );
@@ -339,21 +355,50 @@ function init() {
 // Start the application
 document.addEventListener("DOMContentLoaded", init);
 
-// Mapa de la pagina nosotros
+// MAPA DE LA PAGINA DE !NOSOTROS!
 function initMap() {
-  // Coordenadas de ejemplo para Boulevard street 186, Córdoba, Argentina
   const mapLocation = { lat: -31.418840548674446, lng: -64.18113800000002 };
 
-  // Crea un nuevo mapa
+  // Crear un nuevo mapa
   const map = new google.maps.Map(document.getElementById("map-canvas"), {
     zoom: 15,
     center: mapLocation,
   });
 
-  // Añade un marcador
+  // Añadir un marcador
   new google.maps.Marker({
     position: mapLocation,
     map: map,
     title: "Chacabuco 186, Córdoba",
   });
 }
+
+// Loader
+function hideLoader() {
+  const loader = document.querySelector(".loader");
+  setTimeout(() => {
+    loader.classList.add("hidden");
+  }, 8000);
+}
+
+hideLoader();
+
+// Payment complete
+function paymentComplete() {
+  const paymentCompleteDiv = document.querySelector(".payment-complete");
+  setTimeout(() => {
+    paymentCompleteDiv.classList.remove("hidden");
+    paymentCompleteDiv.classList.add("flex");
+  }, 8000);
+}
+
+paymentComplete();
+
+// Boton Regresar a la tienda
+const buttonHome = document.querySelector(".button-home");
+buttonHome.addEventListener("click", () => {
+  // Borrar elementos en el carrito
+  localStorage.removeItem(STORAGE_KEY);
+  allProducts = [];
+  window.location.href = "../index.html";
+});

@@ -30,9 +30,9 @@
     <!-- Preconnect to external resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- Styles -->
+    <!-- Estilos -->
     <link rel="stylesheet" href="styles.css" />
-    <!-- Fonts - Optimized to only load needed weights -->
+    <!-- Fuentes -->
     <link
       href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;600;800&family=Inter:wght@400;500;600&family=Jost:wght@700&display=swap"
       rel="stylesheet"
@@ -41,19 +41,23 @@
   </head>
   <body>
     <header>
+      <!-- Menu Hamburguesa -->
       <button class="hamburger-menu" aria-label="Toggle navigation menu">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
       </button>
+      <!-- Logo -->
       <a href="index.html" class="logo" aria-label="SCRIPTSTORE Home"
         >SCRIPTSTORE</a
       >
+      <!-- Navegacion Principal -->
       <nav class="main-nav" aria-label="Main navigation">
         <a href="index.html" aria-current="page">Tienda</a>
         <a href="pages/colection.html">Colección</a>
         <a href="pages/nosotros.html">Nosotros</a>
       </nav>
+      <!-- Icono Carrito -->
       <div class="containerIconPadre">
         <button
           class="containerIconCarrito buttonCarrito"
@@ -67,61 +71,78 @@
             height="28"
             loading="lazy"
           />
+          <!-- Contador de productos -->
           <div class="count-products" aria-live="polite">
             <span id="contador-productos" aria-label="Items in cart">0</span>
           </div>
         </button>
+        <!-- Contenedor de productos en el carrito -->
         <div class="container-cart-products hidden-cart" aria-hidden="true">
+          <!-- Producto en el carrito -->
           <div class="row-product hidden">
             <div class="cart-product">
+              <!-- Informacion del producto -->
               <div class="info-cart-product">
+                <!-- Cantidad de productos -->
                 <span class="cantidad-producto-carrito">1</span>
+                <!-- Titulo del producto -->
                 <p class="titulo-producto-carrito">Producto</p>
+                <!-- Precio del producto -->
                 <span class="precio-producto-carrito">$999</span>
+                <!-- Boton para eliminar el producto -->
+                <button class="remove-product" aria-label="Remove item">
+                  <!-- Icono de cerrar -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="icon-close"
+                    width="25"
+                    height="25"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
               </div>
-              <button class="remove-product" aria-label="Remove item">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="icon-close"
-                  width="25"
-                  height="25"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              </button>
+              
             </div>
           </div>
+          <!-- Total del carrito -->
           <div class="cart-total hidden">
             <h3>Total:</h3>
             <span class="total-pagar">$1000</span>
           </div>
+          <!-- Mensaje de carrito vacio -->
           <p class="cart-empty">Carrito vacío</p>
+          <!-- Boton para ir al carrito -->
           <button class="botonIrAlCarrito" id="botonIrAlCarrito">
             Ir Al Carrito
           </button>
         </div>
       </div>
     </header>
+    <!-- Main -->
     <main>
+      <!-- Banner Principal -->
       <section class="hero-section">
         <div class="bannerContainer" role="banner">
           <div class="bannerContent">
             <h1 class="bannerTitle">CLASSICS</h1>
             <p class="bannerDescription">Estilos Clasicos Infantables</p>
+            <!-- Boton para ver la coleccion -->
             <a href="pages/colection.html" class="bannerButton"
               >VER COLECCIÓN</a
             >
           </div>
         </div>
       </section>
+      <!-- Destacados -->
       <section class="featured-products" aria-labelledby="featured-heading">
         <div class="tituloLista">
           <h3 id="featured-heading">Destacados</h3>
