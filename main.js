@@ -104,7 +104,12 @@ function displayCollectionProducts() {
   );
 
   const productsHTML = classicProducts
-    .map((product, index) => createProductCard(product, index))
+    .map((product) => {
+      const originalIndex = productos.findIndex(
+        (p) => p.title === product.title
+      );
+      return createProductCard(product, originalIndex);
+    })
     .join("");
 
   DOM.products.collectionContainer.innerHTML = productsHTML;
